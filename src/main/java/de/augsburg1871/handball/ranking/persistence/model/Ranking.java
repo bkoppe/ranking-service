@@ -66,6 +66,11 @@ public class Ranking {
         this.id = id;
     }
 
+//    @Transient
+//    public Season getSeason(){
+//        return id.getSeason();
+//    }
+
     public URL getUrl() {
         return url;
     }

@@ -32,28 +32,28 @@ public class RankingServiceApplication implements CommandLineRunner {
 
     @Override
     public void run(final String... args) throws Exception {
-//        rankRepository.deleteAll();
-
-        Ranking.Builder builder = new Ranking.Builder(SEASON_2017_2018, MAENNER_2);
-
-        Ranking ranking = builder
-                .withUrl("https://bhv-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupPage?championship=SW+2017%2F18&group=215160")
-//                .withRanks(new Rank.Builder(rankingId, "Augsburg 1871").build())
-                .withParsingEnabled(true)
-                .build();
-
-        rankRepository.save(ranking);
-
-        ranking = rankingService.getRankingFor(MAENNER_2);
-
-        List<Ranking> rankings = rankRepository.findAll();
-        for (Ranking r : rankings) {
-            System.out.println(r);
-            for (Rank rank : r.getRanks()) {
-                System.out.println(rank);
-            }
-        }
-
-        System.out.println("++done++");
+////        rankRepository.deleteAll();
+//
+//        Ranking.Builder builder = new Ranking.Builder(SEASON_2017_2018, MAENNER_2);
+//
+//        Ranking ranking = builder
+//                .withUrl("https://bhv-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/groupPage?championship=SW+2017%2F18&group=215160")
+////                .withRanks(new Rank.Builder(rankingId, "Augsburg 1871").build())
+//                .withParsingEnabled(true)
+//                .build();
+//
+//        rankRepository.save(ranking);
+//
+//        ranking = rankingService.getRankingFor(MAENNER_2);
+//
+//        List<Ranking> rankings = rankRepository.findAll();
+//        for (Ranking r : rankings) {
+//            System.out.println(r);
+//            for (Rank rank : r.getRanks()) {
+//                System.out.println(rank);
+//            }
+//        }
+//
+//        System.out.println("++done++");
     }
 }

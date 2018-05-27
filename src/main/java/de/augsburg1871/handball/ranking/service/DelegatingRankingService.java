@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @Transactional
@@ -33,7 +34,7 @@ public class DelegatingRankingService implements RankingService {
 
     //TODO configure current season
     @Override
-    public Ranking getRankingFor(AgeGroup ageGroup) {
+    public Ranking getCurrentRankingFor(AgeGroup ageGroup) {
         return getRankingFor(Season.SEASON_2017_2018, ageGroup);
     }
 
@@ -57,4 +58,8 @@ public class DelegatingRankingService implements RankingService {
         return ranking;
     }
 
+    @Override
+    public List<Ranking> getRankings(final Season season) {
+        return rankingRepository.findAllBySeason(season);
+    }
 }
